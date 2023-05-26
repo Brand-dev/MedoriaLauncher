@@ -11,7 +11,8 @@ body {
     margin: 0;
     padding: 0;
     user-select: none;
-    background: linear-gradient(#00000066, #00000066), url("../images/background/light.jpg") black no-repeat center center scroll;
+    background: url('../images/background/V1.jpg') no-repeat center center fixed;
+    background-size: cover;
 }
 
 img {
@@ -52,7 +53,7 @@ img {
     width: 30px;
     height: 26px;
     transition: color .2s, background-color .2s;
-    color: black;
+    color: rgba(0, 0, 0, 0.185);
     cursor: pointer;
 }
 
@@ -135,7 +136,7 @@ img {
 }
 
 .preload-title {
-    font: normal normal bold 30px/40px Poppins;
+    font: normal normal bold 30px/40px Minecraftia;
     color: #E1E1E1;
     text-align: center;
     margin: 2em 0;
