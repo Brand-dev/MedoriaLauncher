@@ -40,7 +40,7 @@ function addAccount(data) {
 
 function accountSelect(uuid) {
     let account = document.getElementById(uuid);
-    let pseudo = account.querySelector('.account-name').innerText;
+    let pseudo = account.querySelector('.account-uuid').innerText;
     let activeAccount = document.querySelector('.active-account')
 
     if (activeAccount) activeAccount.classList.toggle('active-account');
@@ -49,5 +49,5 @@ function accountSelect(uuid) {
 }
 
 function headplayer(pseudo) {
-    document.querySelector(".player-head").style.backgroundImage = `url(https://minotar.net/helm/${pseudo}/100)`;
+    document.querySelector(".player-head").style.backgroundImage = `url(https://visage.surgeplay.com/full/${pseudo})`;
 }

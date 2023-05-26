@@ -16,75 +16,13 @@ const dataDirectory = process.env.APPDATA || (process.platform == 'darwin' ? `${
 
 class Home {
     static id = "home";
-    async init(config, news) {
+    async init(config) {
         this.config = config
-        this.news = await news
         this.database = await new database().init();
-        this.initNews();
         this.initLaunch();
-        this.initStatusServer();
         this.initBtn();
     }
 
-    async initNews() {
-        let news = document.querySelector('.news-list');
-        if (this.news) {
-            if (!this.news.length) {
-                let blockNews = document.createElement('div');
-                blockNews.classList.add('news-block', 'opacity-1');
-                blockNews.innerHTML = `
-                    <div class="news-header">
-                        <div class="header-text">
-                            <div class="title">Aucun news n'ai actuellement disponible.</div>
-                        </div>
-                    </div>
-                    <div class="news-content">
-                        <div class="bbWrapper">
-                            <p>Vous pourrez suivre ici toutes les news relative au serveur.</p>
-                        </div>
-                    </div>`
-                news.appendChild(blockNews);
-            } else {
-                for (let News of this.news) {
-                    let date = await this.getdate(News.publish_date)
-                    let blockNews = document.createElement('div');
-                    blockNews.classList.add('news-block');
-                    blockNews.innerHTML = `
-                        <div class="news-header">
-                            <div class="header-text">
-                                <div class="title">${News.title}</div>
-                            </div>
-                            <div class="date">
-                                <div class="day">${date.day}</div>
-                                <div class="month">${date.month}</div>
-                            </div>
-                        </div>
-                        <div class="news-content">
-                            <div class="bbWrapper">
-                                <p>${News.content.replace(/\n/g, '</br>')}</p>
-                                <p class="news-author">Auteur,<span> ${News.author}</span></p>
-                            </div>
-                        </div>`
-                    news.appendChild(blockNews);
-                }
-            }
-        } else {
-            let blockNews = document.createElement('div');
-            blockNews.classList.add('news-block', 'opacity-1');
-            blockNews.innerHTML = `
-                <div class="news-header">
-                    <div class="header-text">
-                        <div class="title">Error.</div>
-                    </div>
-                </div>
-                <div class="news-content">
-                    <div class="bbWrapper">
-                        <p>Impossible de contacter le serveur des news.</br>Merci de vérifier votre configuration.</p>
-                    </div>
-                </div>`
-            // news.appendChild(blockNews);
-        }
-    }
 
     async initLaunch() {
         document.querySelector('.play-btn').addEventListener('click', async () => {
@@ -198,37 +136,11 @@ class Home {
         })
     }
 
-    async initStatusServer() {
-        let nameServer = document.querySelector('.server-text .name');
-        let serverMs = document.querySelector('.server-text .desc');
-        let playersConnected = document.querySelector('.etat-text .text');
-        let online = document.querySelector(".etat-text .online");
-        let serverPing = await new Status(this.config.status.ip, this.config.status.port).getStatus();
-
-        if (!serverPing.error) {
-            nameServer.textContent = this.config.status.nameServer;
-            serverMs.innerHTML = `<span class="green">En ligne</span> - ${serverPing.ms}ms`;
-            online.classList.toggle("off");
-            playersConnected.textContent = serverPing.playersConnect;
-        } else if (serverPing.error) {
-            nameServer.textContent = 'Serveur indisponible';
-            serverMs.innerHTML = `<span class="red">Hors ligne</span>`;
-        }
-    }
 
     initBtn() {
-        document.querySelector('.settings-btn').addEventListener('click', () => {
+        document.querySelector('.player-head').addEventListener('click', () => {
             changePanel('settings');
         });
-    }
-
-    async getdate(e) {
-        let date = new Date(e)
-        let year = date.getFullYear()
-        let month = date.getMonth() + 1
-        let day = date.getDate()
-        let allMonth = ['janvier', 'février', 'mars', 'avril', 'mai', 'juin', 'juillet', 'août', 'septembre', 'octobre', 'novembre', 'décembre']
-        return { year: year, month: allMonth[month - 1], day: day }
     }
 }
 export default Home;

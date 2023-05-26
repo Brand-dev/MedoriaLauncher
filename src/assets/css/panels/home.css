@@ -1,44 +1,44 @@
 .player-head {
     position: absolute;
     bottom: 30px;
-    left: 100px;
-    background-image: url("../../images/default/steve.png");
-    background-size: cover;
+    left: 30px;
     background-position: center;
     background-repeat: no-repeat;
     background-color: transparent;
-    width: 50px;
-    height: 50px;
+    width: 256px;
+    height: 256px;
     border: none;
-    border-radius: 15px;
-    transition: all 0.5s cubic-bezier(1, 0.46, 0, 1.29);
-}
-
-.player-head:hover {
-    border-radius: 5px;
-    transition: all 0.5s cubic-bezier(1, 0.46, 0, 1.29);
-}
-
-.settings-btn {
+    cursor: pointer;
+    transition: transform 0.3s;
+  }
+  
+  .player-head:hover {
+    transform: scale(1.1);
+  }
+  
+  h1 {
+    font-size: 24px;
     position: absolute;
-    bottom: 30px;
-    left: 30px;
-    text-align: center;
-    height: 50px;
-    border: none;
-    border-radius: 15px;
-    transition: all 0.5s cubic-bezier(1, 0.46, 0, 1.29);
-}
-
-.settings-btn:hover {
-    border-radius: 5px;
-    transition: all 0.5s cubic-bezier(1, 0.46, 0, 1.29);
-}
-
-
-.icon-settings:before {
-    font-size: 40px;
-}
+    left: calc(50% - 480px);
+    transform: translateX(-50%);
+    bottom: 310px;
+    color: #ffffff;
+    font-family: 'Minecraftia', sans-serif;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  }
+  
+  h1::after {
+    content: '';
+    position: absolute;
+    bottom: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-top: 10px solid #ffffff;
+  }
+  
+  
 
 .play-element {
     margin: 400px auto; /* Ajustez la valeur de la marge supérieure selon vos besoins */
@@ -101,118 +101,4 @@
 .progress-bar::-webkit-progress-value {
     background-color: #00bd7a;
     border-radius: 10px;
-}
-
-.news-list {
-    position: relative;
-    overflow: auto;
-    width: 30%;
-}
-
-.news-list::-webkit-scrollbar {
-    width: 0;
-}
-
-.news-block {
-    margin-bottom: 1rem;
-    transition: opacity 1s;
-    opacity: .4;
-}
-
-.news-block:hover {
-    transition: opacity 1s;
-    opacity: 1;
-}
-
-.opacity-1 {
-    opacity: 1;
-}
-
-.news-header {
-    position: relative;
-    top: 0px;
-    left: 0px;
-    width: 100%;
-    height: 87px;
-    background-color: #292929;
-    border-radius: 10px 10px 0px 0px;
-    transition: color .2s, filter .2s;
-}
-
-.title {
-    position: absolute;
-    font: normal normal bold 27px/40px Minecraftia;
-    letter-spacing: 0px;
-    color: #E1E1E1;
-    display: flex;
-    position: absolute;
-    text-decoration: none;
-    max-width: calc(100% - 158px);
-    font-weight: 600;
-    font-size: 18px;
-    top: 50%;
-    left: 30px;
-    transform: translate(0, -50%);
-    overflow: hidden;
-    line-height: 25px;
-    align-items: center;
-    height: 3em;
-    transition: color .2s;
-}
-
-.date {
-    position: absolute;
-    top: 15px;
-    right: 20px;
-    color: #E1E1E1;
-    width: 75px;
-    text-align: center;
-    font-weight: 900;
-    font-family: Minecraftia;
-    transition: color .2s;
-}
-
-.day {
-    font-size: 28px;
-    margin-bottom: -10px;
-    display: block;
-}
-
-.month {
-    text-transform: uppercase;
-    font-size: 14px;
-}
-
-.news-content {
-    position: relative;
-    width: 100%;
-}
-
-.bbWrapper {
-    position: relative;
-    padding: 20px;
-    background-color: #1f1f1f;
-    font-family: Minecraftia;
-    font-size: 13px !important;
-    color: #E1E1E1;
-    text-decoration: none;
-    border-radius: 0px 0px 10px 10px;
-    transition: color .2s;
-}
-
-.news-author {
-    text-align: end;
-    margin: 0;
-    color: #F1F1F1;
-}
-
-.news-author span {
-    font-style: italic;
-}
-
-.info-list {
-    position: relative;
-    width: 65vh;
-    padding-left: 1rem;
-    background: none;
 }
