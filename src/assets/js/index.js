@@ -14,7 +14,6 @@ class Splash {
     constructor() {
         this.splash = document.querySelector(".splash");
         this.splashMessage = document.querySelector(".splash-message");
-        this.splashAuthor = document.querySelector(".splash-author");
         this.message = document.querySelector(".message");
         this.progress = document.querySelector("progress");
         document.addEventListener('DOMContentLoaded', () => this.startAnimation());
@@ -22,13 +21,10 @@ class Splash {
 
     async startAnimation() {
         let splashes = [
-            { "message": "Je... vie...", "author": "Luuxis" },
-            { "message": "Salut je suis du code.", "author": "Luuxis" },
-            { "message": "Linux n' ai pas un os, mais un kernel.", "author": "Luuxis" }
+            { "message": "Medoria Launcher" },
         ]
         let splash = splashes[Math.floor(Math.random() * splashes.length)];
         this.splashMessage.textContent = splash.message;
-        this.splashAuthor.children[0].textContent = "@" + splash.author;
         await sleep(100);
         document.querySelector("#splash").style.display = "block";
         await sleep(500);
@@ -36,7 +32,6 @@ class Splash {
         await sleep(500);
         this.splash.classList.add("translate");
         this.splashMessage.classList.add("opacity");
-        this.splashAuthor.classList.add("opacity");
         this.message.classList.add("opacity");
         await sleep(1000);
         this.checkUpdate();

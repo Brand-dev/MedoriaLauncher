@@ -18,7 +18,7 @@ class Login {
     }
 
     getOnline() {
-        console.log(`Initializing microsoft Panel...`)
+        console.log(`Initialisation du panel Microsoft...`)
         this.loginMicrosoft();
     }
 
@@ -48,9 +48,7 @@ class Login {
                 }
 
                 let profile = {
-                    uuid: account_connect.uuid,
-                    skins: account_connect.profile.skins || [],
-                    capes: account_connect.profile.capes || []
+                    uuid: account_connect.uuid
                 }
 
                 this.database.add(account, 'accounts')
