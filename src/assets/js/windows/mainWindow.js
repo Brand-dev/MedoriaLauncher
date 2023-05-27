@@ -35,7 +35,8 @@ function createWindow() {
         show: false,
         webPreferences: {
             contextIsolation: false,
-            nodeIntegration: true
+            nodeIntegration: true,
+            contentSecurityPolicy: "default-src 'self'"
         },
     });
     electron.Menu.setApplicationMenu(null);
