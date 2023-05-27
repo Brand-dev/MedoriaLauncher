@@ -1,7 +1,7 @@
 {
     "name": "MedoriaLauncher",
     "preductname": "MedoriaLauncher",
-    "version": "0.0.2",
+    "version": "0.0.1",
     "description": "Launcher Minecraft moddée pour le serveur Medoria!",
     "main": "src/app.js",
     "author": "Brand",
