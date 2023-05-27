@@ -84,12 +84,14 @@ img {
     position: absolute;
     top: 55%;
     left: 50%;
+    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.5);
     transform: translate(-50%, -50%);
 }
 
 .preload-progress {
     position: absolute;
     left: 50%;
+    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.5);
     transform: translate(-50%, -50%);
     width: 127px;
 }
@@ -101,6 +103,7 @@ img {
     margin-left: 14px;
     margin-top: 12px;
     background: #ffffff;
+    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.5);
     border-radius: 50%;
     transform: translateX(0);
     animation: dot 2.8s infinite;
@@ -109,6 +112,7 @@ img {
 .dots {
     transform: translateX(0);
     margin-top: 12px;
+    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.5);
     margin-left: 31px;
     animation: dots 2.8s infinite;
 }
@@ -139,6 +143,7 @@ img {
     font: normal normal bold 30px/40px Minecraftia;
     color: #E1E1E1;
     text-align: center;
+    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.5);
     margin: 2em 0;
 }
 

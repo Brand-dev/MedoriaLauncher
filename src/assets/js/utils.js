@@ -30,10 +30,13 @@ function addAccount(data) {
     div.classList.add("account");
     div.id = data.uuid;
     div.innerHTML = `
-        <img class="account-image" src="https://minotar.net/helm/${data.name}/100">
+        <img class="account-image" src="https://visage.surgeplay.com/bust/${data.uuid}">
+        <div>PSEUDO</div>
         <div class="account-name">${data.name}</div>
+        <br>
+        <div>UUID</div>
         <div class="account-uuid">${data.uuid}</div>
-        <div class="account-delete"><div class="icon-account-delete icon-account-delete-btn"></div></div>
+        <div class="account-delete">DÉCONNEXION</div>
     `
     document.querySelector('.accounts').appendChild(div);
 }
