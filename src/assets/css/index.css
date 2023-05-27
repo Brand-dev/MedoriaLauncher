@@ -2,6 +2,7 @@
 
 body {
     background-color: #fcc9b9;
+    background: url('../images/background/V1.jpg') no-repeat center center fixed;
     font-family: "Minecraftia";
     letter-spacing: 0;
     -webkit-app-region: drag;

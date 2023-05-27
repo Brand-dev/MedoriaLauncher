@@ -39,7 +39,7 @@ class Splash {
 
     async checkUpdate() {
         if (dev) return this.startLauncher();
-        this.setStatus(`En quête de nouveautés...`);
+        this.setStatus(`Recherche de mise à jour...`);
 
         ipcRenderer.invoke('update-app').then(err => {
             if (err.error) {
@@ -49,7 +49,7 @@ class Splash {
         })
 
         ipcRenderer.on('updateAvailable', () => {
-            this.setStatus(`Mise à jour disponible !!`);
+            this.setStatus(`Mise à jour disponible !`);
             this.toggleProgress();
             ipcRenderer.send('start-update');
         })
