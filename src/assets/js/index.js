@@ -39,12 +39,12 @@ class Splash {
 
     async checkUpdate() {
         if (dev) return this.startLauncher();
-        this.setStatus(`recherche de mise à jour...`);
+        this.setStatus(`En quête de nouveautés...`);
 
         ipcRenderer.invoke('update-app').then(err => {
             if (err.error) {
                 let error = err.message;
-                this.shutdown(`erreur lors de la recherche de mise à jour :<br>${error}`);
+                this.shutdown(`Oups, une erreur de mise à jour !<br>${error}`);
             }
         })
 
