@@ -20,13 +20,13 @@
     },
     "dependencies": {
         "electron-updater": "^5.0.1",
-        "minecraft-java-core": "^3.4.4",
+        "minecraft-java-core": "^3.4.3",
         "node-fetch": "^2.6.7"
     },
     "devDependencies": {
         "cross-env": "^7.0.3",
-        "electron": "^24.4.0",
-        "electron-builder": "^24.4.0",
+        "electron": "^20.0.0",
+        "electron-builder": "^23.0.3",
         "javascript-obfuscator": "^4.0.2",
         "nodemon": "^2.0.16"
     },
