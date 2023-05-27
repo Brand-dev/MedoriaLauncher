@@ -48,7 +48,7 @@ builder.build({
         }
     }
 }).then(() => {
-    console.log('Compilation du build terminé!')
+    console.log('Le moment est venu de déchaîner la puissance de votre nouveau build et de conquérir des mondes virtuels avec style !')
 }).catch(err => {
-    console.error('Et merde! Un problème est survenu!', err)
+    console.error('Oups! On dirait que le launcher a mangé trop de haricots magiques et a explosé !"', err)
 })
