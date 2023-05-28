@@ -10,6 +10,7 @@ const dataDirectory = process.env.APPDATA || (process.platform == 'darwin' ? pro
 
 const os = require('os');
 
+
 class Settings {
     static id = "settings";
     async init(config) {
@@ -64,7 +65,7 @@ class Settings {
         let sliderDiv = document.querySelector(".memory-slider");
         sliderDiv.setAttribute("max", Math.trunc((80 * totalMem) / 100));
 
-        let ram = ramDatabase ? ramDatabase : { ramMin: "4", ramMax: "4" };
+        let ram = ramDatabase ? ramDatabase : { ramMin: "2", ramMax: "8" };
         let slider = new Slider(".memory-slider", parseFloat(ram.ramMin), parseFloat(ram.ramMax));
 
         let minSpan = document.querySelector(".slider-touch-left span");
@@ -82,7 +83,7 @@ class Settings {
 
     async initJavaPath() {
         let javaDatabase = (await this.database.get('1234', 'java-path'))?.value?.path;
-        let javaPath = javaDatabase ? javaDatabase : 'Utiliser la version de java livre avec le launcher';
+        let javaPath = javaDatabase ? javaDatabase : 'Utiliser la version de java fourni avec le launcher';
         document.querySelector(".info-path").textContent = `${dataDirectory.replace(/\\/g, "/")}/${process.platform == 'darwin' ? this.config.dataDirectory : `.${this.config.dataDirectory}`}/runtime`;
 
         let path = document.querySelector(".path");
@@ -107,7 +108,7 @@ class Settings {
         });
 
         document.querySelector(".path-button-reset").addEventListener("click", () => {
-            path.value = 'Utiliser la version de java livre avec le launcher';
+            path.value = 'Utiliser la version de java fourni avec le launcher';
             file.value = '';
             this.database.update({ uuid: "1234", path: false }, 'java-path');
         });

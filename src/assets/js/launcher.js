@@ -109,7 +109,9 @@ class Launcher {
                     }
 
                     refresh_profile = {
-                        uuid: refresh.uuid
+                        uuid: refresh.uuid,
+                        skins: refresh.profile.skins || [],
+                        capes: refresh.profile.capes || [],
                     }
 
                     this.database.update(refresh_accounts, 'accounts');

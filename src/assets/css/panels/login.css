@@ -11,7 +11,7 @@
     user-select: none;
     font-family: 'Minecraftia';
     background-color: rgba(0, 0, 0, 0.5);
-    color: #ffffff;
+    color: rgba(255, 255, 255, 0.8);
     font-weight: 900;
     font-size: 40px;
     letter-spacing: 2px;
@@ -82,7 +82,7 @@
     width: 480px;
     height: 50px;
     background-color: rgba(0, 0, 0, 0.5);
-    color: #ffffff;
+    color: rgba(255, 255, 255, 0.8);
     text-align: center;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
     font-size: 20px;
@@ -106,7 +106,7 @@
 }
 
 .bouton_stats {
-    color: #ffffff;
+    color: rgba(255, 255, 255, 0.8);
     white-space: nowrap;
     font-size: 18px;
     display: inline-block;

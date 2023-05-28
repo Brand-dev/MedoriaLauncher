@@ -22,7 +22,7 @@
     left: calc(50% - 480px);
     transform: translateX(-50%);
     bottom: 310px;
-    color: #ffffff;
+    color: rgba(255, 255, 255, 0.8);
     font-family: 'Minecraftia', sans-serif;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
   }
@@ -46,7 +46,7 @@
     justify-content: center;
     align-items: center;
     font-family: 'Minecraftia';
-    color: #ffffff;
+    color: rgba(255, 255, 255, 0.8);
 }
 
 
@@ -56,7 +56,7 @@
     user-select: none;
     font-family: 'Minecraftia';
     background-color: rgba(0, 0, 0, 0.5);
-    color: #ffffff;
+    color: rgba(255, 255, 255, 0.8);
     font-weight: 900;
     font-size: 40px;
     letter-spacing: 2px;
@@ -73,32 +73,49 @@
 }
 
 .download-content {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Minecraftia';
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.text-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .text-download,
 .progress-bar {
     display: none;
-}
-
-.text-download {
-    font-size: 15px;
-}
-
-.progress-bar {
-    background-color: transparent;
-    height: 10px;
+    position: relative;
+    text-align: center;
+    user-select: none;
+    font-family: 'Minecraftia';
+    background-color: rgba(0, 0, 0, 0.5);
+    color: rgba(255, 255, 255, 0.8);
+    font-weight: 900;
+    font-size: 30px;
+    letter-spacing: 2px;
+    border: none;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    padding: 20px 35px;
+    cursor: default;
+    border-radius: 25px;
+    animation: pulse 2s infinite;
 }
 
 .progress-bar::-webkit-progress-bar {
-    background-color: #797979;
+    background-color: #ffffff;
     border-radius: 10px;
 }
 
 .progress-bar::-webkit-progress-value {
-    background-color: #00bd7a;
+    background-color: #ff0000;
     border-radius: 10px;
 }
+
+
+
+
